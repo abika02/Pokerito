@@ -21,25 +21,23 @@ public class pokerito {
 
         System.out.println("Now, the Dealer will draw five cards. Press enter to continue.");
 
+        int userMatch = 0;
+        int computerMatch = 0;
         for (int i = 1; i < 6; i++) {
             String riverCard = randomCard();
             scan.nextLine();
             System.out.println("card " + i + ":\n" + riverCard);
-        }
-        String riverCard = randomCard();
 
-        int userMatch = 0;
-        int computerMatch = 0;
+            if (userCard.equals(riverCard)) {
+                userMatch++;
+            }
 
-        if (userCard.equals(riverCard)) {
-            userMatch++;
+            if (computerCard.equals(riverCard)) {
+                computerMatch++;
+
+            }
         }
         System.out.println("Your Matches: " + userMatch);
-
-        if (computerCard.equals(riverCard)) {
-            computerMatch++;
-
-        }
         System.out.println("Computer Matches: " + computerMatch);
 
         if (userMatch > computerMatch) {
